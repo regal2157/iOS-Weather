@@ -6,4 +6,29 @@
 //  Copyright © 2019 John O'Connell. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+struct DailyForecastViewModel {
+    let dayOfTheWeek: String
+    let high: Int
+    let low: Int
+    let image: UIImage?
+    
+    static func format(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: date)
+    }
+}
+
+extension DailyForecastViewModel {
+    init?(dailyForecast: DailyDatum) {
+        let date = Date(timeIntervalSince1970: TimeInterval(dailyForecast.time))
+        
+        dayOfTheWeek = DailyForecastViewModel.format(date: date)
+        high = Int(dailyForecast.temperatureHigh)
+        low = Int(dailyForecast.temperatureLow)
+        image = UIImage(named: dailyForecast.icon)
+    }
+}

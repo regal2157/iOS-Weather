@@ -8,3 +8,5 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
+
+DARKSKY_API_KEY = f56f13c147091dff81c18170d55cf477

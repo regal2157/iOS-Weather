@@ -10,6 +10,13 @@ import UIKit
 
 class DailyForecastTableViewCell: UITableViewCell {
 
+    // MARK: Outlets
+    
+    @IBOutlet var dayLabel: UILabel!
+    @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var forecastImageView: UIImageView!
+    
+    // MARK: Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
